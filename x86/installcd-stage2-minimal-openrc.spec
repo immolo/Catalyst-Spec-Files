@@ -1,44 +1,23 @@
-subarch: ppc
+subarch: i486
+version_stamp: openrc-20221119
 target: livecd-stage2
-version_stamp: 2022-10-27
-interpreter: /usr/bin/qemu-ppc
 rel_type: default
-profile: default/linux/ppc/17.0/musl
-snapshot: 2022.10.27
-source_subpath: default/livecd-stage1-ppc-2022-10-27.tar.xz
-portage_confdir: /home/immolo/Catalyst-Spec-Files/releases/portage/isos-qemu
+profile: default/linux/x86/17.0
+snapshot_treeish: HEAD
+source_subpath: default/livecd-stage1-i486-openrc-20221119
+portage_confdir: /home/immolo/Catalyst-Spec-Files/releases/portage/isos
 
-livecd/bootargs: scandelay=10
-livecd/fstype: normal
-livecd/gk_mainargs: --makeopts=-j4
-livecd/iso: /var/tmp/catalyst/builds/default/livecd-normal-ppc-2022-10-27..iso
+livecd/bootargs: dokeymap
+#livecd/cdtar: /usr/share/catalyst/livecd/cdtar/isolinux-elilo-memtest86+-cdtar.tar.bz2
+livecd/fstype: noloop
+livecd/iso: install-x86-minimal-lowmem.iso
 livecd/type: gentoo-release-minimal
+livecd/volid: Gentoo x86 20221119
 
-livecd/rcadd: pbbuttonsd|default
+boot/kernel: gentoo
 
-boot/kernel: ppc32
-
-## ppc32 hardware
-boot/kernel/ppc32/sources: sys-kernel/gentoo-sources
-#boot/kernel/ppc32/config: ../../../kconfig/powerpc/ppc32.config
-boot/kernel/ppc32/extraversion: ppc32
-boot/kernel/ppc32/use:
-	-*
-	atm
-	fbcon
-	ipv6
-	livecd
-	ncurses
-	nls
-	nptl
-	pam
-	png
-	readline
-	socks5
-	ssl
-	truetype
-	unicode
-	usb
+boot/kernel/gentoo/sources: gentoo-sources
+boot/kernel/gentoo/config: /home/immolo/Catalyst-Spec-Files/releases/kconfig/x86/x86-5.4.38.config
 
 livecd/unmerge:
 	app-admin/eselect
@@ -50,10 +29,8 @@ livecd/unmerge:
 	dev-libs/gmp
 	dev-libs/libxml2
 	dev-libs/mpfr
-	dev-libs/popt
 	dev-python/pycrypto
 	dev-util/pkgconfig
-	dev-util/pkgconf
 	perl-core/PodParser
 	perl-core/Test-Harness
 	sys-apps/debianutils
@@ -93,31 +70,29 @@ livecd/empty:
 	/etc/cron.weekly
 	/etc/logrotate.d
 	/etc/modules.autoload.d
+	/etc/rsync
 	/etc/runlevels/single
 	/etc/skel
 	/lib/dev-state
 	/lib/udev-state
-	/lib64/dev-state
-	/lib64/udev-state
 	/root/.ccache
 	/tmp
 	/usr/diet/include
 	/usr/diet/man
 	/usr/include
-	/usr/lib64/X11/config
-	/usr/lib64/X11/doc
-	/usr/lib64/X11/etc
-	/usr/lib64/awk
-	/usr/lib64/ccache
-	/usr/lib64/gcc-config
-	/usr/lib64/nfs
-	/usr/lib64/perl5/site_perl
-	/usr/lib64/portage
-	/usr/lib64/python*/test
+	/usr/i?86-gentoo-linux-uclibc
+	/usr/i?86-pc-linux-uclibc
+	/usr/lib/X11/config
+	/usr/lib/X11/doc
+	/usr/lib/X11/etc
+	/usr/lib/awk
+	/usr/lib/ccache
+	/usr/lib/gcc-config
+	/usr/lib/nfs
+	/usr/lib/perl5/site_perl
+	/usr/lib/portage
 	/usr/local
 	/usr/portage
-	/usr/powerpc-unknown-linux-gnu
-	/usr/powerpc64-unknown-linux-gnu
 	/usr/share/aclocal
 	/usr/share/baselayout
 	/usr/share/binutils-data
@@ -205,6 +180,8 @@ livecd/rm:
 	/usr/bin/gcc*
 	/usr/bin/genkernel
 	/usr/bin/gprof
+	/usr/bin/i?86-gentoo-linux-uclibc-*
+	/usr/bin/i?86-pc-linux-*
 	/usr/bin/jpegtran
 	/usr/bin/ld
 	/usr/bin/libpng*
@@ -216,9 +193,6 @@ livecd/rm:
 	/usr/bin/ranlib
 	/usr/bin/readelf
 	/usr/bin/size
-	/usr/bin/powerpc-unknown-linux-gnu-*
-	/usr/bin/powerpc64-unknown-linux-gnu-*
-	/usr/bin/strings
 	/usr/bin/strip
 	/usr/bin/tbz2tool
 	/usr/bin/xpak
