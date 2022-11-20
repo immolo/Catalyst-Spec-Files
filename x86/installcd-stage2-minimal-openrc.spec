@@ -3,13 +3,13 @@ version_stamp: openrc-20221119
 target: livecd-stage2
 rel_type: default
 profile: default/linux/x86/17.0
-snapshot_treeish: HEAD
+snapshot_treeish: 13d70049d85c685a5b4133c57cf839ed88e63764
 source_subpath: default/livecd-stage1-i486-openrc-20221119
 portage_confdir: /home/immolo/Catalyst-Spec-Files/releases/portage/isos
 
 livecd/bootargs: dokeymap
 #livecd/cdtar: /usr/share/catalyst/livecd/cdtar/isolinux-elilo-memtest86+-cdtar.tar.bz2
-livecd/fstype: noloop
+livecd/fstype: normal
 livecd/iso: install-x86-minimal-lowmem.iso
 livecd/type: gentoo-release-minimal
 livecd/volid: Gentoo x86 20221119
@@ -18,7 +18,7 @@ boot/kernel: gentoo
 
 boot/kernel/gentoo/sources: gentoo-sources
 boot/kernel/gentoo/config: /home/immolo/Catalyst-Spec-Files/releases/kconfig/x86/x86-5.4.38.config
-
+boot/kernel/gentoo/gk_kernargs: --kernel-cross-compiler=i686-pc-linux-gnu-
 livecd/unmerge:
 	app-admin/eselect
 	app-admin/eselect-ctags

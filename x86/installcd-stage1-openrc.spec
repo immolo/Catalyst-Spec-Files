@@ -1,10 +1,10 @@
 subarch: i486
-version_stamp: openrc-2022117
+version_stamp: openrc-2022119
 target: livecd-stage1
 rel_type: default
 profile: default/linux/x86/17.0
-snapshot_treeish: HEAD
-source_subpath: default/stage3-i486-openrc-20221107T170540Z
+snapshot_treeish: 13d70049d85c685a5b4133c57cf839ed88e63764
+source_subpath: default/stage3-i486-openrc-20221114T170153Z
 compression_mode: pixz
 portage_confdir: /home/immolo/Catalyst-Spec-Files/releases/portage/isos
 common_flags: -Os -march=i486 -pipe
