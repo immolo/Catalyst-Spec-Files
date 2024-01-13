@@ -1,2 +1,0 @@
-# This works around a circular dep and I see no down-side
-dev-lang/python -bluetooth
