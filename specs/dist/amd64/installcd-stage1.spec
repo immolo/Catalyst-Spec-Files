@@ -1,12 +1,12 @@
 subarch: amd64
-version_stamp: 20240111
+version_stamp: <DATETIME>
 target: livecd-stage1
 rel_type: default
 profile: default/linux/amd64/17.1/no-multilib
-snapshot_treeish: b61b16856dbdcf453bc1a4416a094860b823d619
-source_subpath: default/stage3-amd64-openrc-20240107T170309Z
+snapshot_treeish: <COMMIT>
+source_subpath: default/stage3-amd64-openrc-<DATETIME>
 compression_mode: pixz
-portage_confdir: /root/releng/releases/portage/isos
+portage_confdir: /var/tmp/catalyst/releng/releases/portage/isos
 
 livecd/use:
 	alsa
@@ -80,7 +80,6 @@ livecd/packages:
 	sys-firmware/ipw2100-firmware
 	sys-firmware/ipw2200-firmware
 	sys-fs/bcache-tools
-	sys-fs/bcachefs-tools
 	sys-fs/btrfs-progs
 	sys-fs/cryptsetup
 	sys-fs/dmraid

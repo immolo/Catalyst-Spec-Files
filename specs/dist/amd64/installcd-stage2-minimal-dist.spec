@@ -1,10 +1,10 @@
 subarch: amd64
-version_stamp: <DATETIME>
+version_stamp: 20240217
 target: livecd-stage2
 rel_type: default
 profile: default/linux/amd64/17.1/no-multilib
-snapshot_treeish: <COMMIT>
-source_subpath: default/livecd-stage1-amd64-<DATETIME>
+snapshot_treeish: c2bded00a8fcc7851afecac47689c8726215c2ea
+source_subpath: default/livecd-stage1-amd64-20240217
 portage_confdir: /var/tmp/catalyst/releng/releases/portage/isos
 
 livecd/bootargs: dokeymap

@@ -1,0 +1,13 @@
+diff --git a/targets/support/bootloader-setup.sh b/targets/support/bootloader-setup.sh
+index 455a4f07..877c0edd 100755
+--- a/targets/support/bootloader-setup.sh
++++ b/targets/support/bootloader-setup.sh
+@@ -54,7 +54,7 @@ memtest_grub() {
+ }
+ 
+ default_append_line=(${cmdline_opts[@]} cdroot)
+-default_dracut_append_line=(root=live:CDLABEL=ISOIMAGE rd.live.dir=/ rd.live.squashimg=image.squashfs)
++default_dracut_append_line=(root=live:CDLABEL=ISOIMAGE rd.live.dir=/ rd.live.squashimg=image.squashfs cdroot)
+ 
+ case ${clst_hostarch} in
+ 	alpha)
