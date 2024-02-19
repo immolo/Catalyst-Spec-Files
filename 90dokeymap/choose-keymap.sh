@@ -52,7 +52,7 @@ chooseKeymap() {
 			esac
 		if [ -e /lib/keymaps/${keymap}.map ]; then
 			info "Loading the keymap..."
-			loadkeys -b /lib/keymaps/${keymap}.map
+			busybox loadkmap < /lib/keymaps/${keymap}.map
 			mkdir -p /etc/sysconfig
 			echo "XKEYBOARD=${keymap}" > /etc/sysconfig/keyboard
 		elif [ -z "${keymap}" ]
