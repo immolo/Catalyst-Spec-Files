@@ -3,7 +3,7 @@ version_stamp: plasma-dist
 target: livecd-stage1
 rel_type: default
 profile: default/linux/amd64/23.0/desktop/plasma
-snapshot_treeish: 5988dd0d35f8de593e7cd55d607b2e3743642b52
+snapshot_treeish: 93cf5d40432702d0140b05c82dae46ba8fff4a2b
 source_subpath: default/stage3-amd64-openrc-20240428T163427Z.tar.xz
 compression_mode: pixz
 portage_confdir: /home/immolo/releng/releases/portage/livegui
@@ -248,6 +248,7 @@ livecd/packages:
 	sys-fs/mdadm
 	sys-fs/multipath-tools
 	sys-fs/ntfs3g
+	sys-fs/squashfs-tools
 	sys-fs/reiserfsprogs
 	sys-fs/xfsdump
 	sys-fs/xfsprogs
